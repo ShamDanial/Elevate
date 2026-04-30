@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Elevate.Pages.AboutPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#121212">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <Grid Grid.Row="0" Padding="20,52,20,16" ColumnDefinitions="Auto,*">
+            <Border Grid.Column="0"
+                    BackgroundColor="#1F1F1F"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 14"
+                    WidthRequest="38" HeightRequest="38"
+                    Margin="0,0,12,0">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBackTapped" />
+                </Border.GestureRecognizers>
+                <Label Text="‹" FontSize="24" FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalOptions="Center" VerticalOptions="Center"
+                       Margin="0,-2,0,0" />
+            </Border>
+
+            <Label Grid.Column="1"
+                   Text="About"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   VerticalOptions="Center" />
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="20,8,20,40" Spacing="20">
+
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="12" Margin="0,12,0,4">
+                    <Border WidthRequest="90" HeightRequest="90"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 22"
+                            HorizontalOptions="Center">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#6C63FF" Offset="0.0" />
+                                <GradientStop Color="#00C9A7" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid>
+                            <Polyline Points="10,45 28,25 45,37 68,12"
+                                      Stroke="White"
+                                      StrokeThickness="4.5"
+                                      StrokeLineCap="Round"
+                                      StrokeLineJoin="Round"
+                                      HorizontalOptions="Center"
+                                      VerticalOptions="Center" />
+                            <Polyline Points="53,12 68,12 68,27"
+                                      Stroke="White"
+                                      StrokeThickness="4.5"
+                                      StrokeLineCap="Round"
+                                      StrokeLineJoin="Round"
+                                      HorizontalOptions="Center"
+                                      VerticalOptions="Center" />
+                        </Grid>
+                    </Border>
+
+                    <Label Text="Elevate"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+
+                    <Border BackgroundColor="#2A1A3A"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 14"
+                            Padding="18,7"
+                            HorizontalOptions="Center">
+                        <Label Text="Version 1.0.0"
+                               FontSize="13"
+                               TextColor="#B388FF"
+                               FontAttributes="Bold" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <Border BackgroundColor="#1F1F1F" StrokeThickness="0" StrokeShape="RoundRectangle 16" Padding="20">
+                    <VerticalStackLayout Spacing="14">
+                        <Grid ColumnDefinitions="Auto,*">
+                            <Label Grid.Column="0" Text="👤" FontSize="18" Margin="0,0,12,0" />
+                            <Label Grid.Column="1" Text="Developer" FontSize="16" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" />
+                        </Grid>
+                        <BoxView Color="#2A2A2A" HeightRequest="1" />
+                        <Grid ColumnDefinitions="100,*">
+                            <Label Grid.Column="0" Text="Name" TextColor="#AAAAAA" />
+                            <Label Grid.Column="1" Text="Sham Danial" FontAttributes="Bold" TextColor="White" />
+                        </Grid>
+                        <Grid ColumnDefinitions="100,*">
+                            <Label Grid.Column="0" Text="Course" TextColor="#AAAAAA" />
+                            <Label Grid.Column="1" Text="CSNB544 / CSNB5123" TextColor="White" />
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border BackgroundColor="#1F1F1F" StrokeThickness="0" StrokeShape="RoundRectangle 16" Padding="20">
+                    <VerticalStackLayout Spacing="14">
+                        <Grid ColumnDefinitions="Auto,*">
+                            <Label Grid.Column="0" Text="🌍" FontSize="18" Margin="0,0,12,0" />
+                            <Label Grid.Column="1" Text="SDG 8 — Decent Work &amp; Economic Growth" FontSize="15" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" />
+                        </Grid>
+                        <Label Text="Elevate supports UN Sustainable Development Goal 8 by empowering individuals to track professional achievements, build career momentum, and share economic impact stories."
+                               FontSize="13" TextColor="#AAAAAA" LineBreakMode="WordWrap" />
+                        <FlexLayout Wrap="Wrap" Direction="Row" JustifyContent="Start" AlignItems="Center">
+                            <Border BackgroundColor="#1A3A3A" StrokeShape="RoundRectangle 20" Padding="12,6" Margin="0,4,8,4">
+                                <Label Text="Career Growth" FontSize="12" TextColor="#00C9A7" FontAttributes="Bold" />
+                            </Border>
+                            <Border BackgroundColor="#1A3A3A" StrokeShape="RoundRectangle 20" Padding="12,6" Margin="0,4,8,4">
+                                <Label Text="Productivity" FontSize="12" TextColor="#00C9A7" FontAttributes="Bold" />
+                            </Border>
+                            <Border BackgroundColor="#1A3A3A" StrokeShape="RoundRectangle 20" Padding="12,6" Margin="0,4,8,4">
+                                <Label Text="Employment" FontSize="12" TextColor="#00C9A7" FontAttributes="Bold" />
+                            </Border>
+                        </FlexLayout>
+
+                        <Border BackgroundColor="#1F1F1F" StrokeThickness="0" StrokeShape="RoundRectangle 16" Padding="20">
+                            <VerticalStackLayout Spacing="16">
+                                <Grid ColumnDefinitions="Auto,*">
+                                    <Label Grid.Column="0" Text="🌿" FontSize="18" Margin="0,0,12,0" />
+                                    <Label Grid.Column="1" Text="ESG Impact" FontSize="16" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" />
+                                </Grid>
+
+                                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                    <Border Grid.Column="0" BackgroundColor="#2A1A3A" WidthRequest="32" HeightRequest="32" StrokeShape="RoundRectangle 8">
+                                        <Label Text="👥" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center" />
+                                    </Border>
+                                    <VerticalStackLayout Grid.Column="1">
+                                        <Label Text="Social" FontAttributes="Bold" TextColor="#B388FF" />
+                                        <Label Text="Promotes inclusive professional development and equal opportunity storytelling." FontSize="13" TextColor="#AAAAAA" />
+                                    </VerticalStackLayout>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                    <Border Grid.Column="0" BackgroundColor="#1A3A3A" WidthRequest="32" HeightRequest="32" StrokeShape="RoundRectangle 8">
+                                        <Label Text="🏛️" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center" />
+                                    </Border>
+                                    <VerticalStackLayout Grid.Column="1">
+                                        <Label Text="Governance" FontAttributes="Bold" TextColor="#00C9A7" />
+                                        <Label Text="Encourages transparent reporting of professional milestones and accountability." FontSize="13" TextColor="#AAAAAA" />
+                                    </VerticalStackLayout>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                    <Border Grid.Column="0" BackgroundColor="#1A3A3A" WidthRequest="32" HeightRequest="32" StrokeShape="RoundRectangle 8">
+                                        <Label Text="📈" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center" />
+                                    </Border>
+                                    <VerticalStackLayout Grid.Column="1">
+                                        <Label Text="Economic" FontAttributes="Bold" TextColor="#00C9A7" />
+                                        <Label Text="Drives measurable economic value through consistent achievement documentation." FontSize="13" TextColor="#AAAAAA" />
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <Border BackgroundColor="#1F1F1F" StrokeThickness="0" StrokeShape="RoundRectangle 16" Padding="20">
+                            <VerticalStackLayout Spacing="14">
+                                <Grid ColumnDefinitions="Auto,*">
+                                    <Label Grid.Column="0" Text="ℹ️" FontSize="18" Margin="0,0,12,0" />
+                                    <Label Grid.Column="1" Text="App Information" FontSize="16" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" />
+                                </Grid>
+
+                                <BoxView Color="#2A2A2A" HeightRequest="1" />
+
+                                <Grid ColumnDefinitions="100,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="10">
+                                    <Label Grid.Row="0" Grid.Column="0" Text="Version" TextColor="#AAAAAA" />
+                                    <Label Grid.Row="0" Grid.Column="1" Text="1.0.0" FontAttributes="Bold" TextColor="White" />
+
+                                    <Label Grid.Row="1" Grid.Column="0" Text="Build" TextColor="#AAAAAA" />
+                                    <Label Grid.Row="1" Grid.Column="1" Text="2026.1" FontAttributes="Bold" TextColor="White" />
+
+                                    <Label Grid.Row="2" Grid.Column="0" Text="Platform" TextColor="#AAAAAA" />
+                                    <Label Grid.Row="2" Grid.Column="1" Text=".NET MAUI (Win &amp; Android)" FontAttributes="Bold" TextColor="White" />
+
+                                    <Label Grid.Row="3" Grid.Column="0" Text="License" TextColor="#AAAAAA" />
+                                    <Label Grid.Row="3" Grid.Column="1" Text="MIT License" FontAttributes="Bold" TextColor="White" />
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <Label Text="© 2026 Elevate. All rights reserved." 
+       TextColor="#555555" 
+       FontSize="12" 
+       HorizontalOptions="Center" 
+       Margin="0,10,0,20" />
+
+                    </VerticalStackLayout>
+                </Border>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

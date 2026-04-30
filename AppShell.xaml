@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="Elevate.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Elevate.Pages"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False"
+    Shell.TabBarBackgroundColor="#1A1A1A"
+    Shell.TabBarForegroundColor="#6C63FF"
+    Shell.TabBarUnselectedColor="#555555"
+    Shell.TabBarTitleColor="#6C63FF">
+
+    <!-- Splash (no tab bar) -->
+    <ShellContent
+        Route="SplashPage"
+        ContentTemplate="{DataTemplate pages:SplashPage}"
+        Shell.TabBarIsVisible="False"/>
+
+    <!-- Login (no tab bar) -->
+    <ShellContent
+        Route="LoginPage"
+        ContentTemplate="{DataTemplate pages:LoginPage}"
+        Shell.TabBarIsVisible="False"/>
+
+    <!-- Main tabs -->
+    <TabBar Shell.TabBarIsVisible="True">
+        <Tab Title="Home" Icon="tab_home.png">
+            <ShellContent
+                Route="HomePage"
+                ContentTemplate="{DataTemplate pages:HomePage}"/>
+        </Tab>
+        <Tab Title="Log" Icon="tab_log.png">
+            <ShellContent
+                Route="LoggerPage"
+                ContentTemplate="{DataTemplate pages:LoggerPage}"/>
+        </Tab>
+        <Tab Title="Planner" Icon="tab_plan.png">
+            <ShellContent
+                Route="PlannerPage"
+                ContentTemplate="{DataTemplate pages:PlannerPage}"/>
+        </Tab>
+        <Tab Title="Progress" Icon="tab_progress.png">
+            <ShellContent
+                Route="ProgressPage"
+                ContentTemplate="{DataTemplate pages:ProgressPage}"/>
+        </Tab>
+        <Tab Title="Analytics" Icon="tab_analytics.png">
+            <ShellContent
+                Route="AnalyticsPage"
+                ContentTemplate="{DataTemplate pages:AnalyticsPage}"/>
+        </Tab>
+    </TabBar>
+
+    <!-- Overlay pages (no tab bar) -->
+    <ShellContent
+        Route="AlertsPage"
+        ContentTemplate="{DataTemplate pages:AlertsPage}"
+        Shell.TabBarIsVisible="False"/>
+    <ShellContent
+        Route="SettingsPage"
+        ContentTemplate="{DataTemplate pages:SettingsPage}"
+        Shell.TabBarIsVisible="False"/>
+    <ShellContent
+        Route="AboutPage"
+        ContentTemplate="{DataTemplate pages:AboutPage}"
+        Shell.TabBarIsVisible="False"/>
+
+</Shell>

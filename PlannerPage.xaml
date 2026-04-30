@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Elevate.Pages.PlannerPage"
+             BackgroundColor="#121212"
+             Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <Grid RowDefinitions="Auto, *">
+            <Grid Grid.Row="0" Padding="20,52,20,10" ColumnDefinitions="Auto, *, Auto">
+                <Border Grid.Column="0" BackgroundColor="#222" StrokeShape="RoundRectangle 12"
+                        WidthRequest="40" HeightRequest="40">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnBackTapped"/>
+                    </Border.GestureRecognizers>
+                    <Label Text="‹" FontSize="28" TextColor="White"
+                           HorizontalOptions="Center" VerticalOptions="Center" Margin="0,-2,0,0"/>
+                </Border>
+                <VerticalStackLayout Grid.Column="1" Margin="15,0">
+                    <Label Text="Content Planner" FontSize="24" FontAttributes="Bold" TextColor="White"/>
+                    <Label x:Name="SubtitleLabel" Text="..." TextColor="#888" FontSize="13"/>
+                </VerticalStackLayout>
+                <Border Grid.Column="2" BackgroundColor="#6C63FF" WidthRequest="40" HeightRequest="40"
+                        StrokeShape="RoundRectangle 20">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnAddContentTapped"/>
+                    </Border.GestureRecognizers>
+                    <Label Text="+" TextColor="White" FontSize="24"
+                           HorizontalOptions="Center" VerticalOptions="Center" Margin="0,-2,0,0"/>
+                </Border>
+            </Grid>
+
+            <ScrollView Grid.Row="1">
+                <VerticalStackLayout x:Name="TaskListStack" Padding="20" Spacing="5"/>
+            </ScrollView>
+        </Grid>
+
+        <!-- Add Content bottom sheet -->
+        <Grid x:Name="PopupOverlay" BackgroundColor="#CC000000" IsVisible="False" Opacity="0">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnClosePopupTapped"/>
+            </Grid.GestureRecognizers>
+            <Border x:Name="BottomSheet" VerticalOptions="End" BackgroundColor="#1F1F1F"
+                    StrokeShape="RoundRectangle 30,30,0,0" Padding="25" TranslationY="600">
+                <VerticalStackLayout Spacing="18">
+                    <Label Text="Schedule Content" FontSize="20" FontAttributes="Bold"
+                           TextColor="White" HorizontalOptions="Center"/>
+
+                    <Grid ColumnDefinitions="*, *" ColumnSpacing="12">
+                        <Border x:Name="VideoTypeBorder" Grid.Column="0" BackgroundColor="#6C63FF"
+                                Padding="12" StrokeShape="RoundRectangle 12">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnVideoTypeTapped"/>
+                            </Border.GestureRecognizers>
+                            <Label Text="📹 Video" TextColor="White" HorizontalOptions="Center"/>
+                        </Border>
+                        <Border x:Name="LiveTypeBorder" Grid.Column="1" BackgroundColor="#2A2A2A"
+                                Padding="12" StrokeShape="RoundRectangle 12">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnLiveTypeTapped"/>
+                            </Border.GestureRecognizers>
+                            <Label x:Name="LiveTypeLabel" Text="📺 Live" TextColor="#888"
+                                   HorizontalOptions="Center"/>
+                        </Border>
+                    </Grid>
+
+                    <Entry x:Name="ContentTitleEntry" Placeholder="Title" TextColor="White"/>
+
+                    <VerticalStackLayout Spacing="12">
+                        <Label Text="Date" TextColor="#888" FontSize="12" Margin="5,0"/>
+                        <DatePicker x:Name="ContentDatePicker" TextColor="White"/>
+                        <Label Text="Time" TextColor="#888" FontSize="12" Margin="5,0"/>
+                        <TimePicker x:Name="ContentTimePicker" TextColor="White"/>
+                    </VerticalStackLayout>
+
+                    <Editor x:Name="ContentDescEditor" Placeholder="Notes..." TextColor="White" HeightRequest="80"/>
+                    <Button Text="Schedule Post" BackgroundColor="#6C63FF" Clicked="OnScheduleClicked"
+                            CornerRadius="12" HeightRequest="54" FontAttributes="Bold"/>
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+    </Grid>
+</ContentPage>
