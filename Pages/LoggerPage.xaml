@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Elevate.Pages.LoggerPage"
+             BackgroundColor="#121212"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto, *">
+        <Grid Grid.Row="0" Padding="20,52,20,10" ColumnDefinitions="Auto, *">
+            <Border Grid.Column="0" BackgroundColor="#222" StrokeShape="RoundRectangle 12" WidthRequest="40" HeightRequest="40">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBackTapped"/>
+                </Border.GestureRecognizers>
+                <Label Text="‹" FontSize="28" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,-2,0,0"/>
+            </Border>
+            <Label Grid.Column="1" Text="Log Stats" FontSize="24" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" Margin="15,0"/>
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="20" Spacing="20">
+
+                <!-- Current goal hint -->
+                <Label x:Name="CurrentGoalLabel" Text="Loading goal..." TextColor="#6C63FF" FontSize="13" FontAttributes="Bold"/>
+
+                <!-- Category selector: only Followers and Likes -->
+                <Label Text="What are you logging?" TextColor="#888" FontSize="14"/>
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+
+                    <!-- Followers chip -->
+                    <Border x:Name="FollowersChip"
+                            Grid.Column="0"
+                            BackgroundColor="#6C63FF"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 14"
+                            Padding="0,18">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnFollowersTapped"/>
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout HorizontalOptions="Center" Spacing="4">
+                            <Label Text="👥" FontSize="26" HorizontalOptions="Center"/>
+                            <Label x:Name="FollowersChipLabel"
+                                   Text="Followers"
+                                   TextColor="White"
+                                   FontSize="13"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Likes chip -->
+                    <Border x:Name="LikesChip"
+                            Grid.Column="1"
+                            BackgroundColor="#1F1F1F"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 14"
+                            Padding="0,18">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLikesTapped"/>
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout HorizontalOptions="Center" Spacing="4">
+                            <Label Text="❤️" FontSize="26" HorizontalOptions="Center"/>
+                            <Label x:Name="LikesChipLabel"
+                                   Text="Likes"
+                                   TextColor="#888888"
+                                   FontSize="13"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                </Grid>
+
+                <!-- Metric value -->
+                <VerticalStackLayout Spacing="8">
+                    <Label x:Name="MetricLabel" Text="Total Followers" TextColor="#888" FontSize="14"/>
+                    <Grid ColumnDefinitions="Auto, *, Auto" ColumnSpacing="15">
+                        <Button Grid.Column="0" Text="-" Clicked="OnMinusTapped" BackgroundColor="#6C63FF" TextColor="White" FontAttributes="Bold" FontSize="20" WidthRequest="50" CornerRadius="12"/>
+                        <Border Grid.Column="1" BackgroundColor="#1F1F1F" StrokeShape="RoundRectangle 12" StrokeThickness="0">
+                            <Entry x:Name="MetricEntry" Text="0" HorizontalTextAlignment="Center" TextColor="White" Keyboard="Numeric" TextChanged="OnMetricEntryChanged"/>
+                        </Border>
+                        <Button Grid.Column="2" Text="+" Clicked="OnPlusTapped" BackgroundColor="#6C63FF" TextColor="White" FontAttributes="Bold" FontSize="20" WidthRequest="50" CornerRadius="12"/>
+                    </Grid>
+                    <!-- Context hint shown below the counter -->
+                    <Label x:Name="MetricHintLabel"
+                           Text="Enter your current total follower count"
+                           TextColor="#555"
+                           FontSize="12"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+
+                <!-- Optional note -->
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Note (Optional)" TextColor="#888" FontSize="14"/>
+                    <Border BackgroundColor="#1F1F1F" Padding="12" StrokeShape="RoundRectangle 12" StrokeThickness="0">
+                        <Editor x:Name="DescriptionEditor"
+                                Placeholder="Add context, e.g. 'after viral reel'…"
+                                PlaceholderColor="#444"
+                                TextColor="White"
+                                AutoSize="TextChanges"
+                                MinimumHeightRequest="80"/>
+                    </Border>
+                </VerticalStackLayout>
+
+                <!-- Date -->
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Date" TextColor="#888" FontSize="14"/>
+                    <Border BackgroundColor="#1F1F1F" Padding="12,4" StrokeShape="RoundRectangle 12" StrokeThickness="0">
+                        <DatePicker x:Name="AchievementDatePicker" TextColor="White"/>
+                    </Border>
+                </VerticalStackLayout>
+
+                <Button Text="Save 🏆"
+                        BackgroundColor="#6C63FF"
+                        CornerRadius="12"
+                        HeightRequest="56"
+                        FontAttributes="Bold"
+                        Clicked="OnRecordTapped"
+                        Margin="0,20,0,40"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

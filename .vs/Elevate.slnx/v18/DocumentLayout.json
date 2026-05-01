@@ -1,0 +1,199 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Elevate\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|c:\\elevate\\elevate\\pages\\settingspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|solutionrelative:elevate\\pages\\settingspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|c:\\elevate\\elevate\\pages\\settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|solutionrelative:elevate\\pages\\settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|c:\\elevate\\elevate\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|solutionrelative:elevate\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|c:\\elevate\\elevate\\pages\\aboutpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|solutionrelative:elevate\\pages\\aboutpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|c:\\elevate\\elevate\\pages\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|solutionrelative:elevate\\pages\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|c:\\elevate\\elevate\\pages\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|solutionrelative:elevate\\pages\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|c:\\elevate\\elevate\\elevate.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|solutionrelative:elevate\\elevate.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\shamd\\.nuget\\packages\\microsoft.maui.resizetizer\\10.0.20\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|c:\\elevate\\elevate\\pages\\plannerpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|solutionrelative:elevate\\pages\\plannerpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|c:\\elevate\\elevate\\platforms\\android\\androidmanifest.xml||{4E01A4BC-CFCF-452C-8C08-51352512D197}",
+      "RelativeMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|solutionrelative:elevate\\platforms\\android\\androidmanifest.xml||{4E01A4BC-CFCF-452C-8C08-51352512D197}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|c:\\elevate\\elevate\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{251C486D-BC6B-1865-8FF5-4D9CA496254D}|Elevate\\Elevate.csproj|solutionrelative:elevate\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SettingsPage.xaml.cs",
+              "DocumentMoniker": "C:\\Elevate\\Elevate\\Pages\\SettingsPage.xaml.cs",
+              "RelativeDocumentMoniker": "Elevate\\Pages\\SettingsPage.xaml.cs",
+              "ToolTip": "C:\\Elevate\\Elevate\\Pages\\SettingsPage.xaml.cs",
+              "RelativeToolTip": "Elevate\\Pages\\SettingsPage.xaml.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAmwDEAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T08:08:03.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SettingsPage.xaml",
+              "DocumentMoniker": "C:\\Elevate\\Elevate\\Pages\\SettingsPage.xaml",
+              "RelativeDocumentMoniker": "Elevate\\Pages\\SettingsPage.xaml",
+              "ToolTip": "C:\\Elevate\\Elevate\\Pages\\SettingsPage.xaml",
+              "RelativeToolTip": "Elevate\\Pages\\SettingsPage.xaml",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAAwGEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-01T08:07:58.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Elevate\\Elevate\\AppShell.xaml",
+              "RelativeDocumentMoniker": "Elevate\\AppShell.xaml",
+              "ToolTip": "C:\\Elevate\\Elevate\\AppShell.xaml",
+              "RelativeToolTip": "Elevate\\AppShell.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-01T08:04:14.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AboutPage.xaml",
+              "DocumentMoniker": "C:\\Elevate\\Elevate\\Pages\\AboutPage.xaml",
+              "RelativeDocumentMoniker": "Elevate\\Pages\\AboutPage.xaml",
+              "ToolTip": "C:\\Elevate\\Elevate\\Pages\\AboutPage.xaml",
+              "RelativeToolTip": "Elevate\\Pages\\AboutPage.xaml",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAIYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-01T07:14:41.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomePage.xaml",
+              "DocumentMoniker": "C:\\Elevate\\Elevate\\Pages\\HomePage.xaml",
+              "RelativeDocumentMoniker": "Elevate\\Pages\\HomePage.xaml",
+              "ToolTip": "C:\\Elevate\\Elevate\\Pages\\HomePage.xaml",
+              "RelativeToolTip": "Elevate\\Pages\\HomePage.xaml",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAAAKsAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-30T13:27:51.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomePage.xaml.cs",
+              "DocumentMoniker": "C:\\Elevate\\Elevate\\Pages\\HomePage.xaml.cs",
+              "RelativeDocumentMoniker": "Elevate\\Pages\\HomePage.xaml.cs",
+              "ToolTip": "C:\\Elevate\\Elevate\\Pages\\HomePage.xaml.cs",
+              "RelativeToolTip": "Elevate\\Pages\\HomePage.xaml.cs",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAqwCAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T13:04:24.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Elevate.csproj",
+              "DocumentMoniker": "C:\\Elevate\\Elevate\\Elevate.csproj",
+              "RelativeDocumentMoniker": "Elevate\\Elevate.csproj",
+              "ToolTip": "C:\\Elevate\\Elevate\\Elevate.csproj",
+              "RelativeToolTip": "Elevate\\Elevate.csproj",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAFwAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-30T12:57:14.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Microsoft.Maui.Resizetizer.After.targets",
+              "DocumentMoniker": "C:\\Users\\shamd\\.nuget\\packages\\microsoft.maui.resizetizer\\10.0.20\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets",
+              "RelativeDocumentMoniker": "..\\Users\\shamd\\.nuget\\packages\\microsoft.maui.resizetizer\\10.0.20\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets",
+              "ToolTip": "C:\\Users\\shamd\\.nuget\\packages\\microsoft.maui.resizetizer\\10.0.20\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets",
+              "RelativeToolTip": "..\\Users\\shamd\\.nuget\\packages\\microsoft.maui.resizetizer\\10.0.20\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets",
+              "ViewState": "AgIAACwBAAAAAAAAAAAIwD8BAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-04-30T13:04:54.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PlannerPage.xaml.cs",
+              "DocumentMoniker": "C:\\Elevate\\Elevate\\Pages\\PlannerPage.xaml.cs",
+              "RelativeDocumentMoniker": "Elevate\\Pages\\PlannerPage.xaml.cs",
+              "ToolTip": "C:\\Elevate\\Elevate\\Pages\\PlannerPage.xaml.cs",
+              "RelativeToolTip": "Elevate\\Pages\\PlannerPage.xaml.cs",
+              "ViewState": "AgIAAO4AAAAAAAAAAAAswAUBAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T13:02:54.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AndroidManifest.xml",
+              "DocumentMoniker": "C:\\Elevate\\Elevate\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeDocumentMoniker": "Elevate\\Platforms\\Android\\AndroidManifest.xml",
+              "ToolTip": "C:\\Elevate\\Elevate\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeToolTip": "Elevate\\Platforms\\Android\\AndroidManifest.xml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-04-30T13:00:44.045Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Elevate\\Elevate\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "Elevate\\MauiProgram.cs",
+              "ToolTip": "C:\\Elevate\\Elevate\\MauiProgram.cs",
+              "RelativeToolTip": "Elevate\\MauiProgram.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T12:59:54.453Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<api>
+  <jcw-types>
+    <type name="MainActivity" package="crc64dd2134e0fb5b56b6" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc6488302ad6e9e4df1a.MauiAppCompatActivity" partial_assembly_qualified_name="Elevate.MainActivity, Elevate">
+      <constructors>
+        <constructor name="MainActivity" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+        <constructor name="MainActivity" method="n_.ctor:(I)V:" jni_signature="(I)V" managed_parameters="System.Int32, System.Private.CoreLib" params="int p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </constructors>
+    </type>
+    <type name="MainApplication" package="crc64dd2134e0fb5b56b6" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc6488302ad6e9e4df1a.MauiApplication" is_application="True" partial_assembly_qualified_name="Elevate.MainApplication, Elevate" application_constructor="MainApplication" />
+  </jcw-types>
+  <acw-types partial-assembly-name="Elevate" module-name="Elevate.dll">
+    <type assembly-qualified-name="Elevate.MainActivity, Elevate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="elevate.MainActivity" java-key="crc64dd2134e0fb5b56b6.MainActivity" managed-key="Elevate.MainActivity" partial-assembly-qualified-name="Elevate.MainActivity, Elevate" />
+    <type assembly-qualified-name="Elevate.MainApplication, Elevate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="elevate.MainApplication" java-key="crc64dd2134e0fb5b56b6.MainApplication" managed-key="Elevate.MainApplication" partial-assembly-qualified-name="Elevate.MainApplication, Elevate" />
+  </acw-types>
+</api>

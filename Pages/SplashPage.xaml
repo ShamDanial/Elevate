@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Elevate.Pages.SplashPage"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#0D0D0F" Offset="0.0" />
+            <GradientStop Color="#1A1040" Offset="0.6" />
+            <GradientStop Color="#0A2A2A" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <Grid>
+        <Ellipse WidthRequest="300" HeightRequest="300"
+                 HorizontalOptions="Start" VerticalOptions="Start"
+                 Margin="-100,-100,0,0"
+                 Opacity="0.08">
+            <Ellipse.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#7C6FF7" Offset="0" />
+                    <GradientStop Color="Transparent" Offset="1" />
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+
+        <Ellipse WidthRequest="250" HeightRequest="250"
+                 HorizontalOptions="End" VerticalOptions="End"
+                 Margin="0,0,-80,-80"
+                 Opacity="0.08">
+            <Ellipse.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#00C9A7" Offset="0" />
+                    <GradientStop Color="Transparent" Offset="1" />
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+
+        <VerticalStackLayout x:Name="MainContent"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Spacing="0"
+                             Opacity="0">
+
+            <Border x:Name="IconBorder"
+                    WidthRequest="110"
+                    HeightRequest="110"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 28"
+                    HorizontalOptions="Center"
+                    Margin="0,0,0,28">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#6C63FF" Offset="0.0" />
+                        <GradientStop Color="#00C9A7" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Grid>
+                    <Polyline Points="10,55 35,30 55,45 80,15"
+                              Stroke="White"
+                              StrokeThickness="5"
+                              StrokeLineCap="Round"
+                              StrokeLineJoin="Round"
+                              HorizontalOptions="Center"
+                              VerticalOptions="Center" />
+                    <Polyline Points="65,15 80,15 80,30"
+                              Stroke="White"
+                              StrokeThickness="5"
+                              StrokeLineCap="Round"
+                              StrokeLineJoin="Round"
+                              HorizontalOptions="Center"
+                              VerticalOptions="Center" />
+                </Grid>
+            </Border>
+
+            <Label Text="Elevate"
+                   FontSize="42"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="White"/>
+            
+
+            <Label Text="Creator Growth &amp; Content Strategy"
+                   FontSize="14"
+                   HorizontalOptions="Center"
+                   Margin="0,8,0,0"
+                   TextColor="#9999BB" />
+
+            <VerticalStackLayout Margin="0,56,0,0" Spacing="16" HorizontalOptions="Center">
+                <Grid WidthRequest="180" HeightRequest="4">
+                    <BoxView BackgroundColor="#2A2A3E"
+                             CornerRadius="2"
+                             HorizontalOptions="Fill" />
+                    <BoxView x:Name="LoadingBar"
+                             BackgroundColor="Transparent"
+                             CornerRadius="2"
+                             HorizontalOptions="Start"
+                             WidthRequest="0">
+                        <BoxView.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="#6C63FF" Offset="0" />
+                                <GradientStop Color="#00C9A7" Offset="1" />
+                            </LinearGradientBrush>
+                        </BoxView.Background>
+                    </BoxView>
+                </Grid>
+
+                <Label x:Name="LoadingLabel"
+                       Text="Loading your dashboard..."
+                       FontSize="12"
+                       TextColor="#555577"
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+
+        <Label Text="Version 1.0.0"
+               FontSize="12"
+               TextColor="#333355"
+               HorizontalOptions="Center"
+               VerticalOptions="End"
+               Margin="0,0,0,32" />
+    </Grid>
+</ContentPage>

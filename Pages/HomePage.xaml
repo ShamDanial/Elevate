@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Elevate.Pages.HomePage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#F8F9FF">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+
+        <Grid Grid.Row="0" Padding="20,52,20,16" ColumnDefinitions="*,Auto,Auto,Auto">
+            <VerticalStackLayout Grid.Column="0" Spacing="2">
+                <Label Text="Hey, Creator! 👋" FontSize="26" FontAttributes="Bold" TextColor="#1A1C1E" />
+                <Label x:Name="DateLabel" FontSize="13" TextColor="#5F6368" />
+            </VerticalStackLayout>
+
+            <Border Grid.Column="1" BackgroundColor="#F0F0F8" StrokeThickness="0" StrokeShape="RoundRectangle 20" WidthRequest="40" HeightRequest="40" Margin="0,0,8,0">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnAlertsTapped"/>
+                </Border.GestureRecognizers>
+                <Grid>
+                    <Label Text="🔔" HorizontalOptions="Center" VerticalOptions="Center" />
+
+                    <Label x:Name="AlertBadge" 
+               Text="0"
+               TextColor="White"
+               FontSize="10"
+               FontAttributes="Bold"
+               BackgroundColor="#6C63FF"
+               HorizontalOptions="End" 
+               VerticalOptions="Start" 
+               Margin="0,-4,-4,0"
+               Padding="5,0"
+               MinimumWidthRequest="18"
+               HeightRequest="18"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               IsVisible="False" />
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="2" BackgroundColor="#F0F0F8" StrokeThickness="0" StrokeShape="RoundRectangle 20" WidthRequest="40" HeightRequest="40" Margin="0,0,8,0">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSettingsTapped"/>
+                </Border.GestureRecognizers>
+                <Label Text="⚙️" HorizontalOptions="Center" VerticalOptions="Center" />
+            </Border>
+
+            <Border Grid.Column="3" BackgroundColor="#F0F0F8" StrokeThickness="0" StrokeShape="RoundRectangle 20" WidthRequest="40" HeightRequest="40">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnProfileTapped"/>
+                </Border.GestureRecognizers>
+                <Label Text="👤" HorizontalOptions="Center" VerticalOptions="Center" />
+            </Border>
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="20,0,20,20" Spacing="20">
+
+                <Border StrokeThickness="0" StrokeShape="RoundRectangle 20" Padding="20">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#EEF0FF" Offset="0.0" />
+                            <GradientStop Color="#E0FFF8" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <VerticalStackLayout Spacing="12">
+                        <Grid ColumnDefinitions="Auto,*,Auto">
+                            <Label x:Name="GoalTitleLabel" Text="🚩 Current Growth Goal" Grid.Column="0" Grid.ColumnSpan="2" TextColor="#6C63FF" FontAttributes="Bold" FontSize="13" />
+                            <Border Grid.Column="2" BackgroundColor="#6C63FF" Padding="8,4" StrokeShape="RoundRectangle 10">
+                                <Label x:Name="GoalPercentLabel" Text="0%" TextColor="White" FontSize="12" FontAttributes="Bold" />
+                            </Border>
+                        </Grid>
+
+                        <Label Text="Loading Goal..." FontSize="20" FontAttributes="Bold" TextColor="#1A1C1E" />
+                        <Label x:Name="GoalSubtitleLabel" Text="..." FontSize="13" TextColor="#5F6368" />
+
+                        <Grid HeightRequest="8" Margin="0,4,0,0">
+                            <BoxView BackgroundColor="#D8DAFF" CornerRadius="4" />
+                            <BoxView x:Name="GoalProgressBar" CornerRadius="4" HorizontalOptions="Start" WidthRequest="0">
+                                <BoxView.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#6C63FF" Offset="0" />
+                                        <GradientStop Color="#00C9A7" Offset="1" />
+                                    </LinearGradientBrush>
+                                </BoxView.Background>
+                            </BoxView>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="12" RowSpacing="12">
+                    <Border Grid.Row="0" Grid.Column="0" BackgroundColor="White" StrokeThickness="0" StrokeShape="RoundRectangle 16" Padding="16">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLogAchievementTapped"/>
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout Spacing="8">
+                            <Border BackgroundColor="#F0F2FF" WidthRequest="40" HeightRequest="40" StrokeShape="RoundRectangle 10" HorizontalOptions="Start">
+                                <Label Text="🏆" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Border>
+                            <Label Text="Log Achievement" FontAttributes="Bold" TextColor="#1A1C1E" />
+                            <Label Text="Record your wins" FontSize="12" TextColor="#5F6368" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Row="0" Grid.Column="1" BackgroundColor="White" StrokeThickness="0" StrokeShape="RoundRectangle 16" Padding="16">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnPlanContentTapped"/>
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout Spacing="8">
+                            <Border BackgroundColor="#E0FFF8" WidthRequest="40" HeightRequest="40" StrokeShape="RoundRectangle 10" HorizontalOptions="Start">
+                                <Label Text="📅" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Border>
+                            <Label Text="Plan Content" FontAttributes="Bold" TextColor="#1A1C1E" />
+                            <Label Text="Schedule uploads" FontSize="12" TextColor="#5F6368" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.Column="0" BackgroundColor="White" StrokeThickness="0" StrokeShape="RoundRectangle 16" Padding="16">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnAnalyticsTapped" />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout Spacing="10">
+                            <Border BackgroundColor="#EEF0FF" StrokeThickness="0" StrokeShape="RoundRectangle 12" WidthRequest="44" HeightRequest="44" HorizontalOptions="Start">
+                                <Label Text="📊" FontSize="22" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Border>
+                            <Label Text="View Analytics" FontSize="15" FontAttributes="Bold" TextColor="#1A1C1E" />
+                            <Label Text="Track your growth" FontSize="12" TextColor="#5F6368" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.Column="1" BackgroundColor="White" StrokeThickness="0" StrokeShape="RoundRectangle 16" Padding="16">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnProgressTapped" />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout Spacing="10">
+                            <Border BackgroundColor="#E0FFF8" StrokeThickness="0" StrokeShape="RoundRectangle 12" WidthRequest="44" HeightRequest="44" HorizontalOptions="Start">
+                                <Label Text="🎯" FontSize="22" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Border>
+                            <Label Text="Track Progress" FontSize="15" FontAttributes="Bold" TextColor="#1A1C1E" />
+                            <Label Text="Monitor your goals" FontSize="12" TextColor="#5F6368" />
+                        </VerticalStackLayout>
+                    </Border>
+                </Grid>
+
+                <Grid ColumnDefinitions="*,Auto" Margin="0,10,0,5">
+                    <Label Grid.Column="0" Text="Recent Achievements" FontSize="18" FontAttributes="Bold" TextColor="#1A1C1E"/>
+                    <Label Grid.Column="1" Text="See All" FontSize="14" FontAttributes="Bold" TextColor="#6C63FF" VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnProgressTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <VerticalStackLayout x:Name="RecentAchievementsStack" Spacing="12" />
+
+                <Grid ColumnDefinitions="*,Auto" Margin="0,10,0,5">
+                    <Label Grid.Column="0" Text="Upcoming Posts" FontSize="18" FontAttributes="Bold" TextColor="#1A1C1E" />
+                    <Label Grid.Column="1" Text="View Planner" FontSize="14" TextColor="#00C9A7" FontAttributes="Bold" VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnPlanContentTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <VerticalStackLayout x:Name="UpcomingPostsStack" Spacing="12" />
+
+                <BoxView HeightRequest="80" BackgroundColor="Transparent" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

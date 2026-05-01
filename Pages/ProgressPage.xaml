@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Elevate.Pages.ProgressPage"
+             BackgroundColor="#121212"
+             Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <Grid RowDefinitions="Auto, *">
+
+            <!-- Header -->
+            <Grid Grid.Row="0" Padding="20,52,20,10" ColumnDefinitions="Auto, *, Auto">
+                <Border Grid.Column="0" BackgroundColor="#222" StrokeShape="RoundRectangle 12"
+                        WidthRequest="40" HeightRequest="40">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnBackTapped"/>
+                    </Border.GestureRecognizers>
+                    <Label Text="‹" FontSize="28" TextColor="White"
+                           HorizontalOptions="Center" VerticalOptions="Center" Margin="0,-2,0,0"/>
+                </Border>
+                <VerticalStackLayout Grid.Column="1" Margin="15,0">
+                    <Label Text="Track Progress" FontSize="26" FontAttributes="Bold" TextColor="White"/>
+                    <Label x:Name="OverallPercentLabel" Text="0% Complete"
+                           TextColor="#00C9A7" FontSize="13" FontAttributes="Bold"/>
+                </VerticalStackLayout>
+                <Border Grid.Column="2" BackgroundColor="#6C63FF" WidthRequest="40" HeightRequest="40"
+                        StrokeShape="RoundRectangle 20">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnAddGoalTapped"/>
+                    </Border.GestureRecognizers>
+                    <Label Text="+" TextColor="White" FontSize="24"
+                           HorizontalOptions="Center" VerticalOptions="Center" Margin="0,-2,0,0"/>
+                </Border>
+            </Grid>
+
+            <ScrollView Grid.Row="1">
+                <VerticalStackLayout Padding="20" Spacing="24">
+
+                    <!-- Overall progress -->
+                    <Border BackgroundColor="#1F1F1F" Padding="20" StrokeShape="RoundRectangle 20">
+                        <VerticalStackLayout Spacing="10">
+                            <Label x:Name="OverallBigLabel" Text="0%"
+                                   FontSize="36" FontAttributes="Bold" TextColor="White"/>
+                            <ProgressBar x:Name="OverallProgressBar" Progress="0" ProgressColor="#6C63FF"/>
+                            <Label x:Name="OverallSubLabel" Text="across your custom goals"
+                                   TextColor="#555" FontSize="12"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- ── My Goals ── -->
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Label Text="My Goals" TextColor="White" FontAttributes="Bold"
+                               FontSize="20" VerticalOptions="Center"/>
+                        <Label Grid.Column="1" Text="+ Add Goal" TextColor="#6C63FF"
+                               FontSize="13" FontAttributes="Bold" VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnAddGoalTapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                    <VerticalStackLayout x:Name="GoalsStack" Spacing="14"/>
+
+                    <!-- ── Milestones ── -->
+                    <Label Text="Milestones" TextColor="White" FontAttributes="Bold"
+                           FontSize="20" Margin="0,8,0,0"/>
+
+                    <!-- Followers milestone block -->
+                    <Border BackgroundColor="#1A1A2E" Padding="20"
+                            StrokeShape="RoundRectangle 20" StrokeThickness="1">
+                        <Border.Stroke>
+                            <SolidColorBrush Color="#2A2A4A"/>
+                        </Border.Stroke>
+                        <VerticalStackLayout Spacing="16">
+                            <Label Text="👥  Followers" TextColor="#B388FF"
+                                   FontSize="14" FontAttributes="Bold"/>
+                            <!-- Unlocked badges row -->
+                            <ScrollView Orientation="Horizontal"
+                                        HorizontalScrollBarVisibility="Never"
+                                        IsVisible="False"
+                                        x:Name="FollowerBadgesScroll">
+                                <HorizontalStackLayout x:Name="FollowerBadgesRow" Spacing="8"/>
+                            </ScrollView>
+                            <!-- Next milestone card -->
+                            <VerticalStackLayout x:Name="FollowerNextStack" Spacing="10"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Likes milestone block -->
+                    <Border BackgroundColor="#1E1010" Padding="20"
+                            StrokeShape="RoundRectangle 20" StrokeThickness="1">
+                        <Border.Stroke>
+                            <SolidColorBrush Color="#4A2020"/>
+                        </Border.Stroke>
+                        <VerticalStackLayout Spacing="16">
+                            <Label Text="❤️  Likes" TextColor="#FF8A80"
+                                   FontSize="14" FontAttributes="Bold"/>
+                            <ScrollView Orientation="Horizontal"
+                                        HorizontalScrollBarVisibility="Never"
+                                        IsVisible="False"
+                                        x:Name="LikesBadgesScroll">
+                                <HorizontalStackLayout x:Name="LikesBadgesRow" Spacing="8"/>
+                            </ScrollView>
+                            <VerticalStackLayout x:Name="LikesNextStack" Spacing="10"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- ── Recent Wins ── -->
+                    <Label Text="Recent Wins" TextColor="White" FontAttributes="Bold"
+                           FontSize="20" Margin="0,8,0,0"/>
+                    <VerticalStackLayout x:Name="AchievementsStack" Spacing="12"/>
+
+                    <BoxView HeightRequest="40" Color="Transparent"/>
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+
+        <!-- ── Add Goal bottom sheet ── -->
+        <Grid x:Name="GoalPopupOverlay" BackgroundColor="#CC000000" IsVisible="False" Opacity="0">
+            <Border x:Name="GoalBottomSheet" VerticalOptions="End" BackgroundColor="#1A1A1A"
+                    StrokeShape="RoundRectangle 30,30,0,0" Padding="25" TranslationY="800">
+                <VerticalStackLayout Spacing="14">
+                    <Grid ColumnDefinitions="*, Auto">
+                        <VerticalStackLayout Grid.Column="0">
+                            <Label Text="Set New Goal" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="Custom target on top of milestones"
+                                   TextColor="#666" FontSize="12"/>
+                        </VerticalStackLayout>
+                        <Label Grid.Column="1" Text="✕" TextColor="#888" FontSize="20" Padding="10">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnCloseGoalPopupTapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+
+                    <Border BackgroundColor="#252525" StrokeThickness="0"
+                            StrokeShape="RoundRectangle 12" Padding="12,4">
+                        <Entry x:Name="GoalTitleEntry" Placeholder="Goal Title"
+                               PlaceholderColor="#555" TextColor="White"/>
+                    </Border>
+                    <Border BackgroundColor="#252525" StrokeThickness="0"
+                            StrokeShape="RoundRectangle 12" Padding="12">
+                        <Editor x:Name="GoalDescEntry" Placeholder="Description (optional)"
+                                PlaceholderColor="#555" TextColor="White"
+                                HeightRequest="60" AutoSize="TextChanges"/>
+                    </Border>
+                    <Grid ColumnDefinitions="*, *" ColumnSpacing="10">
+                        <Border Grid.Column="0" BackgroundColor="#252525" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 12" Padding="12,4">
+                            <Entry x:Name="GoalCurrentEntry" Placeholder="Current"
+                                   PlaceholderColor="#555" Keyboard="Numeric" TextColor="White"/>
+                        </Border>
+                        <Border Grid.Column="1" BackgroundColor="#252525" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 12" Padding="12,4">
+                            <Entry x:Name="GoalTargetEntry" Placeholder="Target"
+                                   PlaceholderColor="#555" Keyboard="Numeric" TextColor="White"/>
+                        </Border>
+                    </Grid>
+
+                    <Label Text="Unit" TextColor="#888" FontSize="13"/>
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                        <Border x:Name="UnitFollowersChip" Grid.Column="0"
+                                BackgroundColor="#6C63FF" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 12" Padding="0,12">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnUnitFollowersTapped"/>
+                            </Border.GestureRecognizers>
+                            <Label Text="👥  Followers" TextColor="White" FontSize="13"
+                                   FontAttributes="Bold" HorizontalOptions="Center"/>
+                        </Border>
+                        <Border x:Name="UnitLikesChip" Grid.Column="1"
+                                BackgroundColor="#252525" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 12" Padding="0,12">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnUnitLikesTapped"/>
+                            </Border.GestureRecognizers>
+                            <Label Text="❤️  Likes" TextColor="#888" FontSize="13"
+                                   FontAttributes="Bold" HorizontalOptions="Center"/>
+                        </Border>
+                    </Grid>
+
+                    <Border BackgroundColor="#252525" StrokeThickness="0"
+                            StrokeShape="RoundRectangle 12" Padding="12,4">
+                        <DatePicker x:Name="GoalDeadlinePicker" TextColor="White"/>
+                    </Border>
+
+                    <Button Text="Save Goal 🎯" BackgroundColor="#6C63FF"
+                            Clicked="OnSaveGoalClicked" CornerRadius="14"
+                            HeightRequest="54" FontAttributes="Bold"/>
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+    </Grid>
+</ContentPage>

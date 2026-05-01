@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Elevate.Pages.SettingsPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#121212">
+
+    <Grid RowDefinitions="Auto, *">
+        <Grid Grid.Row="0" Padding="20,52,20,10" ColumnDefinitions="Auto, *">
+            <Border Grid.Column="0" BackgroundColor="#222" StrokeShape="RoundRectangle 12" WidthRequest="40" HeightRequest="40">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBackTapped"/>
+                </Border.GestureRecognizers>
+                <Label Text="‹" FontSize="28" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,-2,0,0"/>
+            </Border>
+            <Label Grid.Column="1" Text="Settings" FontSize="24" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" Margin="15,0,0,0"/>
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="20" Spacing="25">
+
+                <!-- Notifications -->
+                <VerticalStackLayout Spacing="12">
+                    <HorizontalStackLayout Spacing="10" Margin="0,0,0,5">
+                        <Label Text="🔔" VerticalOptions="Center"/>
+                        <Label Text="Notifications" FontSize="16" FontAttributes="Bold" TextColor="White" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <Border BackgroundColor="#1F1F1F" StrokeThickness="0" StrokeShape="RoundRectangle 16" Padding="15">
+                        <VerticalStackLayout Spacing="15">
+                            <Grid ColumnDefinitions="Auto, *, Auto">
+                                <Border Grid.Column="0" BackgroundColor="#2A1A3A" WidthRequest="36" HeightRequest="36" StrokeShape="RoundRectangle 8">
+                                    <Label Text="⚡" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Border>
+                                <VerticalStackLayout Grid.Column="1" Margin="12,0" VerticalOptions="Center">
+                                    <Label Text="Real-time Alerts" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="Receive instant notifications" TextColor="#888" FontSize="11"/>
+                                </VerticalStackLayout>
+                                <Switch x:Name="RealTimeAlertsSwitch" Grid.Column="2" Toggled="OnSwitchToggled" ThumbColor="White" OnColor="#6C63FF"/>
+                            </Grid>
+
+                            <BoxView Color="#2A2A2A" HeightRequest="1"/>
+
+                            <Grid ColumnDefinitions="Auto, *, Auto">
+                                <Border Grid.Column="0" BackgroundColor="#1A3A3A" WidthRequest="36" HeightRequest="36" StrokeShape="RoundRectangle 8">
+                                    <Label Text="🕒" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Border>
+                                <VerticalStackLayout Grid.Column="1" Margin="12,0" VerticalOptions="Center">
+                                    <Label Text="Post Reminders" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="Get reminded when it's time to post" TextColor="#888" FontSize="11"/>
+                                </VerticalStackLayout>
+                                <Switch x:Name="PostRemindersSwitch" Grid.Column="2" Toggled="OnSwitchToggled" ThumbColor="White" OnColor="#6C63FF"/>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Border>
+                </VerticalStackLayout>
+
+                <!-- Data -->
+                <VerticalStackLayout Spacing="12">
+                    <HorizontalStackLayout Spacing="10" Margin="0,0,0,5">
+                        <Label Text="📋" VerticalOptions="Center"/>
+                        <Label Text="Data" FontSize="16" FontAttributes="Bold" TextColor="White" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <Border BackgroundColor="#1F1F1F" StrokeShape="RoundRectangle 16" Padding="15">
+                        <VerticalStackLayout Spacing="15">
+                            <Grid ColumnDefinitions="Auto, *, Auto">
+                                <Border Grid.Column="0" BackgroundColor="#2A1A3A" WidthRequest="36" HeightRequest="36" StrokeShape="RoundRectangle 8">
+                                    <Label Text="📊" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Border>
+                                <VerticalStackLayout Grid.Column="1" Margin="12,0" VerticalOptions="Center">
+                                    <Label Text="Analytics Tracking" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="Track usage stats" TextColor="#888" FontSize="11"/>
+                                </VerticalStackLayout>
+                                <Switch x:Name="AnalyticsSwitch" Grid.Column="2" Toggled="OnSwitchToggled" ThumbColor="White" OnColor="#6C63FF"/>
+                            </Grid>
+                            <BoxView Color="#2A2A2A" HeightRequest="1"/>
+                            <Grid ColumnDefinitions="Auto, *, Auto">
+                                <Border Grid.Column="0" BackgroundColor="#1A3A3A" WidthRequest="36" HeightRequest="36" StrokeShape="RoundRectangle 8">
+                                    <Label Text="☁️" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Border>
+                                <VerticalStackLayout Grid.Column="1" Margin="12,0" VerticalOptions="Center">
+                                    <Label Text="Auto Backup" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="Sync data to cloud" TextColor="#888" FontSize="11"/>
+                                </VerticalStackLayout>
+                                <Switch x:Name="AutoBackupSwitch" Grid.Column="2" Toggled="OnSwitchToggled" ThumbColor="White" OnColor="#6C63FF"/>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Border>
+                </VerticalStackLayout>
+
+                <Button Text="Logout" TextColor="#FF7043" BackgroundColor="#1F1F1F" Margin="0,20,0,40" Clicked="OnLogoutTapped"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

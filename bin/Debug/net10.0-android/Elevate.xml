@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elevate</name>
+    </assembly>
+    <members>
+        <member name="T:Elevate.Data.ElevateDatabase">
+            <summary>
+            Central SQLite database service for the Elevate app.
+            Initialised once via MauiProgram and injected as a singleton.
+            All data is user-scoped: every record stores the UserId of its owner.
+            </summary>
+        </member>
+        <member name="M:Elevate.Data.ElevateDatabase.InitAsync">
+            <summary>Creates all tables. No seed data — users enter their own.</summary>
+        </member>
+        <member name="M:Elevate.Data.ElevateDatabase.GetLatestLikesAsync">
+            <summary>Returns the most recently logged Likes achievement for the current user.</summary>
+        </member>
+        <member name="M:Elevate.Data.ElevateDatabase.GetPreviousLikesAsync">
+            <summary>Returns the second-most-recently logged Likes achievement (used for delta calculation).</summary>
+        </member>
+        <member name="M:Elevate.Data.ElevateDatabase.GetGoalsAsync">
+            <summary>Returns only user-created (non-milestone) goals.</summary>
+        </member>
+        <member name="M:Elevate.Data.ElevateDatabase.GetMilestonesAsync">
+            <summary>Returns only preset milestone records for the current user.</summary>
+        </member>
+        <member name="M:Elevate.Data.ElevateDatabase.SeedMilestonesAsync(System.Int32)">
+            <summary>
+            Seeds the standard follower and likes milestones for a user the first
+            time they log in. Safe to call multiple times — skips if already seeded.
+            </summary>
+        </member>
+        <member name="M:Elevate.Data.ElevateDatabase.CheckAndUnlockMilestonesAsync(System.String,System.Double)">
+            <summary>
+            Called every time a follower or likes value is logged.
+            Updates CurrentValue on all matching milestones, unlocks any that
+            have crossed their threshold for the first time, and fires an alert.
+            Returns the list of newly unlocked milestones.
+            </summary>
+        </member>
+        <member name="P:Elevate.Data.Models.Achievement.UserId">
+            <summary>Owner of this record.</summary>
+        </member>
+        <member name="P:Elevate.Data.Models.Achievement.MetricValue">
+            <summary>
+            The numeric value the creator wants to log alongside this achievement.
+            Examples: follower count reached, number of views, revenue amount, etc.
+            It's whatever number best represents "how big" this win is.
+            </summary>
+        </member>
+        <member name="P:Elevate.Data.Models.Achievement.IconEmoji">
+            <summary>Category icon emoji (e.g. "👥", "📹", "📺").</summary>
+        </member>
+        <member name="P:Elevate.Data.Models.Achievement.IsDraft">
+            <summary>Whether this achievement is a draft or fully saved.</summary>
+        </member>
+        <member name="P:Elevate.Data.Models.ContentItem.ContentType">
+            <summary>"Video" or "Livestream"</summary>
+        </member>
+        <member name="P:Elevate.Data.Models.CreatorGoal.Unit">
+            <summary>e.g. "followers", "likes"</summary>
+        </member>
+        <member name="P:Elevate.Data.Models.CreatorGoal.AccentColor">
+            <summary>Accent colour hex shown on the gauge.</summary>
+        </member>
+        <member name="P:Elevate.Data.Models.CreatorGoal.IsMilestone">
+            <summary>
+            True = this is a preset system milestone (seeded on first login).
+            False = user-created custom goal.
+            </summary>
+        </member>
+        <member name="P:Elevate.Data.Models.CreatorGoal.IsUnlocked">
+            <summary>
+            For milestones: has the user's logged value crossed TargetValue yet?
+            Always false for custom goals (they use Progress instead).
+            </summary>
+        </member>
+        <member name="P:Elevate.Data.Models.CreatorGoal.MilestoneBadge">
+            <summary>Emoji badge shown on the milestone card.</summary>
+        </member>
+        <member name="P:Elevate.Data.Models.FollowerSnapshot.DailyGain">
+            <summary>Net new followers gained on this day.</summary>
+        </member>
+        <member name="T:Elevate.Data.Models.UserAccount">
+            <summary>
+            Represents a registered user account.
+            Maps to the "UserAccounts" table in the SQLite database.
+            </summary>
+        </member>
+        <member name="P:Elevate.Data.Models.UserAccount.PasswordHash">
+            <summary>BCrypt hash of the password.</summary>
+        </member>
+        <member name="P:Elevate.Data.Models.UserAccount.SettingsJson">
+            <summary>Simple settings flags stored as JSON string.</summary>
+        </member>
+        <member name="T:Elevate.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+    </members>
+</doc>

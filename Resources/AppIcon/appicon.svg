@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Background -->
+  <rect width="1024" height="1024" rx="200" fill="#0D0D1A"/>
+  
+  <!-- Rocket body -->
+  <ellipse cx="512" cy="420" rx="130" ry="200" fill="none" stroke="#7C4FFF" stroke-width="28"/>
+  
+  <!-- Rocket tip -->
+  <polygon points="512,180 382,380 642,380" fill="none" stroke="#7C4FFF" stroke-width="28" stroke-linejoin="round"/>
+  
+  <!-- Play button inside rocket -->
+  <polygon points="470,370 470,470 570,420" fill="#7C4FFF"/>
+  
+  <!-- Left fin -->
+  <polygon points="382,540 320,640 382,620" fill="none" stroke="#7C4FFF" stroke-width="24" stroke-linejoin="round"/>
+  
+  <!-- Right fin -->
+  <polygon points="642,540 704,640 642,620" fill="none" stroke="#7C4FFF" stroke-width="24" stroke-linejoin="round"/>
+  
+  <!-- Rocket bottom -->
+  <line x1="382" y1="620" x2="642" y2="620" stroke="#7C4FFF" stroke-width="28" stroke-linecap="round"/>
+  
+  <!-- Flame outer -->
+  <ellipse cx="512" cy="700" rx="70" ry="90" fill="#5B3FCC" opacity="0.7"/>
+  
+  <!-- Flame inner -->
+  <ellipse cx="512" cy="720" rx="40" ry="60" fill="#00C9A7" opacity="0.9"/>
+  
+  <!-- Mic icon inside flame -->
+  <rect x="496" y="690" width="32" height="50" rx="16" fill="#0D0D1A"/>
+  <path d="M490 730 Q490 760 512 760 Q534 760 534 730" fill="none" stroke="#0D0D1A" stroke-width="6"/>
+  <line x1="512" y1="760" x2="512" y2="775" stroke="#0D0D1A" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- ELEVATE text -->
+  <text x="512" y="920" font-family="Arial, sans-serif" font-weight="900" font-size="110" fill="white" text-anchor="middle" letter-spacing="8">ELEVATE</text>
+</svg>
